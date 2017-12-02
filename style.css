@@ -1,0 +1,1341 @@
+/*!
+Theme Name: SkiFun43+
+Theme URI: http://underscores.me/
+Author: Marian Sloot
+Author URI: http://underscores.me/
+Description: A custom WordPress Theme using Bootstrap
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: skifun43
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+SkiFun43+ is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden],
+template {
+	display: none;
+}
+
+a {
+	background-color: transparent;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 1em 40px;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+pre {
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+button {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+}
+
+optgroup {
+	font-weight: bold;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+
+
+/* =========================================================================
+
+## THEME SPECIFIC STYLES
+
+================================================================== */
+/* 
+@import url(http://weloveiconfonts.com/api/?family=iconicfill|maki|typicons|entypo); */
+
+/* iconicfill */
+[class*="iconicfill-"]:before {
+  display: inline-block;
+  font-family: 'IconicFill', sans-serif;
+  width: 15px;
+}
+
+/* maki */
+[class*="maki-"]:before {
+  font-family: 'maki', sans-serif;
+  display: inline-block;
+  width: 15px;
+}
+[class="maki-skiing"]::before {
+    width: 20px;
+    color: var(--middle);
+}
+
+/* typicons */
+[class*="typicons-"]:before {
+  font-family: 'typicons', sans-serif;
+  display: inline-block;
+  width: 15px;
+}
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+:root {
+    --white: #fff;
+    --textcolor: #424242;
+    --light:  #4794df;
+    --middle: #226eb7;
+    --dark: #2372bf;
+    --size: 100px;
+    --tintLB: rgba(71, 148, 223, .1) ;
+    --tintxLB: rgba(136, 186, 230, 0.1) ;
+}
+
+/* GLOBAL ELEMENTS 
+===================================================================*/
+body {      
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.2em;
+    color: var(--textcolor);
+}
+
+.logged-in .navbar-fixed-top {
+    top: 32px;
+}
+.container {
+    max-width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	-webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    font-weight: bold;
+}
+h1, h2 {
+    font-family: 'Varela Round', sans-serif;
+    line-height: 1.2em;
+    letter-spacing: -0.03em;
+}
+ h3{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+} 
+h4 {
+    font-size: 18px;
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto  calc(var(--size) * 0.45);
+}
+section:nth-of-type(1) {
+    margin: 0 auto;
+}
+section h1 {
+    text-align: center;    
+    margin: calc(var(--size) * 0.4) 0 calc(var(--size) * 0.23);
+    
+}
+section h2 {
+	margin: calc(var(--size) * 0.4) 0 calc(var(--size) * 0.2);
+}
+
+section h3 {
+    margin: calc(var(--size) * 0.3) 0 calc(var(--size) * 0.1);
+    margin: calc(var(--size) * 0.1) 0 calc(var(--size) * 0.1);
+}
+section h4 {
+    text-align: center;  
+    border-top: dashed;
+    border-bottom: dashed;
+    border-width: 1px;
+    margin: 25px 20% 22px;
+    padding: 10px 0px;
+    color: var(--textcolor);   
+}
+td, th {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: top;
+    padding-right: 10px;
+}
+a {
+    color: var(--light);
+}
+a:hover {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+img, embed, object, video {
+	max-width: 100%;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    text-indent: -.9em;  /*  -.7em;  */
+}
+
+li:before { 
+    padding-right: 0px;
+    color: var(--light);
+}
+
+/* forms  */
+/* form label {
+    text-align: right;
+}
+.radio-group {
+    display: inline-block;
+    vertical-align: top;
+} */
+button.btn {
+    border-radius: 2px;
+    background-color: #4794df;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    margin: 0 0 15px;
+}
+button.btn[type="reset"] {
+    background-color: #aaaaaa;
+}
+main {
+    display:block;
+}
+
+.background {
+    margin-left: auto;
+    margin-right: auto;
+    background-image:url('assets/img/openingspagina05.png');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center top;
+    background-size: 100%;
+    max-width: 1400px;
+}
+.bold {
+    font-weight: 700;
+    }    
+.condensed {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+  
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+}
+.LB {
+    color: var(--light);
+}
+.MB {
+    color: var(--middle);
+}
+.DB {
+    color: var(--dark);
+}
+.tintvlak {
+    background-color: #edf3fc;
+}
+.tintvlakLB  {
+    background-color: rgba(71, 148, 223, .1) ;
+}
+.tintvlakMB  {
+    background-color: rgba(71, 148, 223, .25) ;
+}
+.tintvlakDB  {
+    background-color: rgba(33, 84, 142, .25);
+}
+.tintvlakWit50  {
+    background-color: rgba(255, 255, 255, .5);
+}
+.tintvlakWit25  {
+    background-color: rgba(255, 255, 255, .25);
+}
+.beeld img{
+    float: right;
+    padding: 50px 20px 0;
+   
+}
+.beeld1 img {
+    padding-top: 20px;
+}
+
+
+
+
+/* HEADER
+-========================================================*/
+
+ .header {
+    min-height: 56px;
+    transition: min-height 0.3s;  
+  }
+  
+  .header__inner {
+    width: 100%;
+    max-width: calc(var(--size) * 14);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .header__logo {
+    width: 45%;
+    margin-bottom: 1em;
+    vertical-align: top;
+    margin-top: 4%;    /*50px; */
+    padding-left: 10%;
+  }
+  .header__menu {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    padding: 1em;
+  }
+  /* .header__menu svg {
+    width: 32px;
+    fill: #000000;
+  } */
+
+  /* NAVIGATION
+  ================================================================== */
+
+.nav__bar {    
+    margin: 0 3%;    
+    background-color: var(--light);
+    border-radius: 10px;
+}
+.nav__bar a {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;    
+    color: #000;
+    padding: 1.5em;
+}    
+.nav__bar a:hover, .nav__bar a:focus {
+    color: var(--white);
+}
+.nav__list {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.nav__item {
+    display: inline-block;
+    padding: 1.5em;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;    
+    white-space: nowrap;
+}
+
+/* added fixes in navbar */
+.current_page_item.menu-item a {
+    color: var(--white);
+}
+
+
+
+/* SECTION index.html
+===================================================================================== */
+
+/* #boven: see MEDIA QUERIES */
+.alert {
+    background: var(--middle);
+    color: var(--white);
+    font-weight: bold;
+    padding: 0.1rem 0.5rem 0.2rem;
+}
+
+#reizen h2 {
+    color: var(--light);
+    margin-top: calc(var(--size) * 0.3);
+}
+#reizen h4 {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#onder h2 {
+    color: var(--dark);
+}
+
+
+/* SECTIONS reis1.html, reis2.html
+===================================================================================== */
+
+section#boekingen {
+    margin-bottom: 0;
+}
+
+#boekingen h3 {
+    /* font-size: 22px; */
+    margin:calc(var(--size) * 0.3) 0 calc(var(--size) * 0.5);
+    text-align: center;
+}
+
+#boekingen .callout {
+    background: var(--tintLB);
+    text-align: center;
+    padding: 2px 10px 10px;
+    margin-bottom: 30px;
+}
+.callout span:nth-child(1) {
+    background: var(--light);
+    color: var(--white);
+    display: block;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    margin-left: -18px;
+
+}
+.callout span {
+    /* background: var(--light); */
+    display: block;
+    /* height: 35px;
+    width: 35px; */
+    text-align: center;
+    /* line-height: 35px; */
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    margin: 0 auto;    
+}
+#boekingen h4, #boekingen p {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 0.9rem;
+}
+#boekingen h4 {
+    margin: 25px 11% 22px;
+}
+
+.details ul {
+    padding: 0px;
+    margin: 0px;
+}  
+.details li {  
+    list-style-position: inside;      
+}
+#boeken p {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+}
+/* https://html-cleaner.com/features/replace-html-table-tags-with-divs/ */
+/* https://softwareengineering.stackexchange.com/questions/277778/why-are-people-making-tables-with-divs */
+/* table layout */
+
+.kosten {
+    display: table;
+    /* width: 100%; */
+}
+.kosten > div {
+    display: table-row;
+}
+.kosten .kenmerk {
+    display: table-cell;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    text-align: left;
+    vertical-align: top;
+    padding-right: 10px;
+}
+
+
+
+
+
+/* SECTION ervaringen.html
+===================================================================================== */
+
+#ervaringen h4 {
+    color: var(--light);
+}
+aside, .ervaring {
+    margin-top: 40px;
+}
+aside li {
+    text-indent: 0;
+}
+aside .beeld:nth-of-type(2n+1) img { /* odd */
+    --multiplier: 1;
+    float: none;
+    padding: 0 0 5px calc( var(--multiplier) * var(--size) * 0.83);
+}
+aside .beeld:nth-of-type(2n) img { /* even */
+    --multiplier: 2;
+    float: none;
+    padding: 0 0 5px calc( var(--multiplier) * var(--size)  * 0.83);
+}
+.post, .widget, #comments {
+    position: relative;
+    margin: 0 0 40px;
+}
+.widget {
+    padding: 20px;    
+}
+.post {
+    background-color: var(--tintxLB);
+}
+.post 
+.post header, .post .post-excerpt, .post .post-body, #comments .comments-wrap {
+    padding: 20px;
+}
+.post:nth-of-type(2n) {   /* even */
+    margin-left: 70px;
+}
+.post:nth-of-type( 2n+1) {   /* odd */
+    margin-right: 70px;
+}
+.post header {
+    padding: 20px 80px 20px 20px;
+}
+
+.post-details {
+	font-size: 0.8rem;
+}
+
+.post-details span {
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.post-details span:first-child {
+	padding-left: 0;
+}
+.post-comments-badge {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    border: none;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    background: var(--light);
+    text-align: center;
+    display: table;
+}
+.post-comments-badge:hover {
+    background: var(--middle);
+}
+.post-comments-badge a {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+/* SECTION ervaring.html
+==================================================================================== */
+article h1 {
+    font-size: 2rem;
+}
+#comments li {
+    text-indent: 0;
+}
+#comments h3 {
+	text-align: center;
+}
+
+#comments h4 {
+	font-size: 1.3em;
+}
+
+#comments ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#comments ol li {
+	background: var(--tintxLB);
+	padding: 10px 20px;
+	margin: 10px 0;	
+}
+
+#comments ol li ol.children {
+	padding: 0;
+	list-style: none;
+	font-size: 0.96em;
+}
+
+#leave-comment {
+	margin: 40px 0 0;
+	padding: 20px 0 0;
+	border-top: solid 1px var(--tintxLB);
+}
+
+
+/* SECTION boeken.html
+===================================================================================== */
+
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+.form-group label {
+    font-weight: bold;
+}
+.form-check label {
+    font-weight: normal;
+}
+.form-basic {
+    max-width: 800px;
+    padding: 20px;
+    /* box-sizing: border-box; */
+    background-color: rgba(71, 148, 223, .25);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    /* text-align: center; */
+
+}
+
+.form-basic h2 {
+    color: var(--light);
+    padding: 0 10px 15px;
+    border-bottom: 2px solid #4794df;
+    font-size: 26px;
+    text-align: center;
+}
+
+/* modal 
+=====================================================================================*/
+.modal {  
+    background: rgba(0,0,0,0.3);   
+}
+
+/* .modal-dialog {  
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+} */
+
+
+.modal-dialog > div {
+    width: 300px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 0 13px 0;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #a2c2eb);
+    background: -webkit-linear-gradient(#fff, #a2c2eb);
+    background: -o-linear-gradient(#fff, #a2c2eb);
+}
+
+.modal a.closeButton {
+    background: #4794df;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.modal a.closeButton:hover, .modal a.closeButton:active { 
+    background: #00d9ff; 
+}
+
+
+/* FOOTER
+========================================================================== */
+
+ footer {
+    border-top: 1px solid #E0E0E0;
+    padding: 1em;
+    width: 100%;
+    margin-top: calc(var(--size) * 0.4);
+    background-color: var(--light);
+    color: var(--white);
+    font-size: 0.7em;    
+  }
+  footer ul {
+    margin: 0;
+    text-align: center;
+  } 
+  
+  footer a {
+    color: var(--white);
+    padding: 1.5em;
+  }  
+  
+  footer a:active, footer a:hover ,footer a:focus {
+    color: #000000;
+  }
+
+
+/* MEDIA QUERIES 
+===============================================================*/
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  }
+
+@media screen and (max-width: 575px) {
+    /** reset all elements to display as block and fill screen **/
+   #arrangement .kosten,
+   #arrangement .kosten > div,
+   #arrangement .kosten .kenmerk {
+      display: block;
+      width: 100%;
+    }
+  }
+
+
+@media screen and (max-width: 767px) {    
+    .background {
+        background-image:url('assets/img/openingspagina-uitsn05.png');
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center top;    
+        background-size: 100%;
+        max-width: calc(var(--size) * 14);
+    }
+
+    h1 {
+        font-size: 32px;
+        }
+    
+        h2 {
+        font-size: 28px;
+        }
+    
+        h3 {
+        font-size: 20px;
+        margin-top: 10px;
+        }
+    
+        h4 {
+        font-size: 16px;
+        }
+
+    .header__logo {
+    width: 85%;
+    margin-top: 4%;
+    }
+    .move {
+        z-index: 10;
+        background-color: var(--light);
+        width: 300px;
+        border-radius: 10px;
+        position: absolute;
+        /* This transform moves the drawer off canvas. */
+        -webkit-transform: translate(-340px, 0);
+        transform: translate(-340px, 0);
+        /* Optionally, we animate the drawer. */
+        transition: transform 0.3s ease;
+    }
+    .move.show {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .boom, .berg {
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        width: 100%;   
+    }
+    .boom {
+        background-image:url('assets/img/Kerstboomgroot.png');        
+        background-position: right 40px top 10px;
+        background-size: 25%;
+        /* max-width: 100%; */              
+    }
+    .berg {
+        background-image:url('assets/img/bergvoor.png');
+        background-position: right top;
+        background-size: 40%;
+    }
+    section h1 {
+        margin: calc(var(--size) * 1.15) 0 calc(var(--size) * 0.2);
+    }
+ }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .boom, .berg {
+        min-height: calc(var(--size) * 3.5);
+    }
+    .beeld1 img {
+        padding-top: 150px;
+    }
+ }
+
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    section h1 {
+        margin: calc(var(--size) * 1.6) 0 calc(var(--size) * 0.2);
+    }
+ }
+
+
+
+@media screen and ( max-width: 997px) {
+   
+}    
+
+   

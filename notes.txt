@@ -1,0 +1,5 @@
+lecture 48: static header to dynamic header.
+
+no "home" button just the sample page:
+
+https://www.udemy.com/bootstrap-to-wordpress/learn/v4/questions/2029060
