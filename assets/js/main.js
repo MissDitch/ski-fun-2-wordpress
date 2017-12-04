@@ -25,3 +25,32 @@ $(function() {
     });
 });
 
+/*
+* Open the drawer when the menu icon is clicked.
+*/
+window.onload = function() {
+    var drawer = document.getElementById('navbarToggler');
+    var menu = document.getElementsByClassName('navbar-toggler');
+    
+    menu[0].addEventListener('click', function(e) {
+        drawer.classList.toggle('open');   
+        e.stopPropagation();
+    });
+
+    window.addEventListener('click', function() {
+        drawer.classList.remove('open');
+    });
+
+    
+    // var menu = document.querySelector('#menu');
+    // var main = document.querySelector('main');
+    // var drawer = document.querySelector('.nav');
+    // menu.addEventListener('click', function(e) {
+    //   drawer.classList.toggle('open');
+    //   e.stopPropagation();
+    // });
+    // main.addEventListener('click', function() {
+    //   drawer.classList.remove('open');
+    // });
+
+    }

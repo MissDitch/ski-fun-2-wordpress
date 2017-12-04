@@ -1284,7 +1284,7 @@ article h1 {
         /* Optionally, we animate the drawer. */
         transition: transform 0.3s ease;
     }
-    .move.show {
+    .move.open, .move.show {
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
     }

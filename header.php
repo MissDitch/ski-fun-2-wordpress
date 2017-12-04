@@ -49,7 +49,7 @@
                     <img class="header__logo" src="<?php bloginfo('stylesheet_directory');?>/assets/img/Skifun43logo_kleur_wit-01.png" alt="logo ski-fun 43+">
 
                     <div class="header__menu navbar-expand-md ">  <!--adding navbar-expand-md is necessary to make it work outside of the nav element -->                        
-                        <a class="navbar-toggler " data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">    
+                        <a class="navbar-toggler " aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">    
                             <span class="navbar-toggler-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"/>
@@ -68,7 +68,7 @@
 
                             'theme_location'    => 'menu-1',
                             'container'         => 'div',
-                            'container_class'   => 'move navbar-collapse collapse',
+                            'container_class'   => 'move',
                             'container_id'      => 'navbarToggler',
                             'menu_class'        => 'navbar-nav nav__list'      
                         ) );
