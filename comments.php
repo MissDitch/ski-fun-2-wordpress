@@ -21,23 +21,24 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
+    <div class="comments-wrap">
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h3 class="comments-title">
 			<?php
 			$comment_count = get_comments_number();
 			if ( 1 === $comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'skifun43' ),
+					esc_html_e( 'Een commentaar op &ldquo;%1$s&rdquo;', 'skifun43' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'skifun43' ) ),
+					esc_html( _nx( '%1$s commentaar op &ldquo;%2$s&rdquo;', '%1$s commentaren op &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'skifun43' ) ),
 					number_format_i18n( $comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -67,6 +68,7 @@ if ( post_password_required() ) {
 	endif; // Check for have_comments().
 
 	comment_form();
-	?>
+    ?>
 
+    </div>   <!-- comments-wrap -->
 </div><!-- #comments -->

@@ -107,8 +107,8 @@ function skifun43_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'skifun43' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'skifun43_widgets_init' );
@@ -163,3 +163,12 @@ function so_37823371_menu_item_class ( $classes, $item, $args, $depth ){
   $classes[] = 'nav__item';
   return $classes;
 }
+
+
+// Replaces the excerpt "more" text by a link.
+function new_excerpt_more($more) {
+    global $post;
+    return '... <a class="moretag" href="'. get_permalink($post->ID) . '"> lees verder &raquo;</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+

@@ -15,40 +15,43 @@
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php skifun43_posted_on(); ?>
-		</div><!-- .entry-meta -->
+        <div class="post-details">
+            <span class="entypo-user LB"></span> <?php the_author() ?>
+            <span class="entypo-clock LB"></span><time><?php the_date() ?></time> 
+            <span class="entypo-folder LB"></span><time><?php the_category(', ') ?></time>
+            <span class="entypo-tag LB"></span><?php the_tags('', ', ', '') ?>
+        
+            <div class="post-comments-badge">
+                <a href="<?php comments_link(); ?>"><span class="iconicfill-comment-alt2-fill"></span><?php comments_number( 0, 1, '%'); ?></a>
+            </div><!-- post-comments-badge -->
+
+            <?php edit_post_link( 'Bewerken', '<div><i class="entypo-pencil LB"></i> ', '</div>'); ?> <!-- makes it possible to hit Edit, and it will take us to the actual post to edit it -->
+            
+        </div><!-- post-details -->
 		<?php
 		endif; ?>
-	</header><!-- .entry-header -->
+    </header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'skifun43' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
+    <?php if(has_post_thumbnail() ) { // check for feature image   ?>
+    <div>
+        <?php the_post_thumbnail();?>
+    </div>   <!-- post-image -->
+    <?php } ?>
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'skifun43' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+    <?php if ( is_single() ) : ?>
+    <div class="post-body">
+        <?php the_content(); ?>
+    </div> <!-- post-content -->
 
-	<footer class="entry-footer">
-		<?php skifun43_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+    <?php else : ?>
+	<div class="post-excerpt">
+       <?php the_excerpt(); ?>
+    </div><!-- post-excerpt -->
+
+    <?php endif; ?>
+
 </article><!-- #post-<?php the_ID(); ?> -->

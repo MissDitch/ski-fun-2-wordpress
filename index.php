@@ -12,10 +12,31 @@
  * @package SkiFun43+
  */
 
+$boven_kop          = get_field('boven_kop', '30');
+$boven_tekst        = get_field('boven_tekst', '30');
+
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<section id="boven" class="boom">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-12 col-md-8">
+                <h1><?php  echo $boven_kop; ?></h1>
+                <p><?php echo $boven_tekst; ?></p>               
+            </div>
+
+        </div>
+    </div> <!-- container -->
+</section> <!--#boven-home -->
+
+<!-- BLOG CONTENT   
+========================================================================== -->
+
+
+<div class="container">
+    <div class="row" id="primary">
+        <main id="content" class="col-sm-8" role="main">     
 
 		<?php
 		if ( have_posts() ) :
@@ -48,9 +69,19 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </main> <!-- content -->
+
+        
+        <!--   SIDEBAR
+        ============================================================================ -->
+        <aside class="col-sm-4 ">
+        <?php get_sidebar(); ?>
+        </aside>
+
+
+    </div>  <!-- row -->
+</div>  <!-- container -->
+
 
 <?php
-get_sidebar();
 get_footer();

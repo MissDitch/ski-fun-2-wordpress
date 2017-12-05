@@ -656,7 +656,7 @@ section:nth-of-type(1) {
 }
 section h1 {
     text-align: center;    
-    margin: calc(var(--size) * 0.4) 0 calc(var(--size) * 0.23);
+    margin: calc(var(--size) * 0.4) 0 calc(var(--size) * 0.4);
     
 }
 section h2 {
@@ -717,6 +717,68 @@ li:before {
     display: inline-block;
     vertical-align: top;
 } */
+
+input {
+    /* width: 320px; */
+    /* box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08); */
+    /* padding: 12px; */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: #5f5f5f;;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	display: block;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 6px 12px;
+}
+
+input[type="submit"],
+button[type="submit"] {
+	display: inline-block;
+	margin-bottom: 0;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1.33;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: none;
+	border-radius: 2px;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+	outline: none;
+	border: none;
+	background: #aaa;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:#bdbdbd;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #bdbdbd;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #bdbdbd;
+}
 button.btn {
     border-radius: 2px;
     background-color: #4794df;
@@ -724,6 +786,7 @@ button.btn {
     font-weight: bold;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
     margin: 0 0 15px;
+    padding: 14px 32px;
 }
 button.btn[type="reset"] {
     background-color: #aaaaaa;
@@ -994,12 +1057,11 @@ section#boekingen {
 
 /* SECTION ervaringen.html
 ===================================================================================== */
-
 #ervaringen h4 {
     color: var(--light);
 }
 aside, .ervaring {
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 aside li {
     text-indent: 0;
@@ -1021,21 +1083,35 @@ aside .beeld:nth-of-type(2n) img { /* even */
 .widget {
     padding: 20px;    
 }
+section h4.widget-title {
+    border-bottom: dashed;
+    border-width: 1px;
+    margin: 0 0 16px;
+    text-align: left;
+    border-top: none;
+}
 .post {
     background-color: var(--tintxLB);
 }
 .post 
-.post header, .post .post-excerpt, .post .post-body, #comments .comments-wrap {
+.post header, 
+.post .post-excerpt, 
+.post .post-body, 
+#comments .comments-wrap {
     padding: 20px;
 }
-.post:nth-of-type(2n) {   /* even */
+/* .post:nth-of-type(2n) {    even 
     margin-left: 70px;
 }
-.post:nth-of-type( 2n+1) {   /* odd */
+.post:nth-of-type( 2n+1) {    odd 
     margin-right: 70px;
-}
+} */
 .post header {
     padding: 20px 80px 20px 20px;
+}
+
+article img {
+    height: auto;
 }
 
 .post-details {
@@ -1075,6 +1151,9 @@ aside .beeld:nth-of-type(2n) img { /* even */
     line-height: 20px;
 }
 
+
+
+
 /* SECTION ervaring.html
 ==================================================================================== */
 article h1 {
@@ -1107,6 +1186,18 @@ article h1 {
 	padding: 0;
 	list-style: none;
 	font-size: 0.96em;
+}
+#comments footer {
+    background: none;
+    color:inherit;
+    padding: 1em 0;
+}
+#comments footer a {
+    color:inherit;
+    padding: 10px 0
+}
+#comments .comment-metadata {
+    margin: 10px 0 0;
 }
 
 #leave-comment {
@@ -1145,6 +1236,21 @@ article h1 {
     border-bottom: 2px solid #4794df;
     font-size: 26px;
     text-align: center;
+}
+
+.form-basic input {
+    color: #5f5f5f;
+    box-sizing: border-box;
+    width: 320px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 12px;
+    border: 1px solid #dbdbdb;
+}
+.form-basic button {
+    display: block;
+    /* padding: 14px 32px; */
+    border: 0;
+    margin: 0px auto 15px;
 }
 
 /* modal 
@@ -1310,7 +1416,7 @@ article h1 {
         background-size: 40%;
     }
     section h1 {
-        margin: calc(var(--size) * 1.15) 0 calc(var(--size) * 0.2);
+        margin: calc(var(--size) * 1.15) 0 calc(var(--size) * 0.4);
     }
  }
 
@@ -1322,13 +1428,21 @@ article h1 {
     .beeld1 img {
         padding-top: 150px;
     }
+    /* post's single page display */
+    .single main {
+        margin-top: 150px;
+    }
+    .single aside {
+        margin-top: 70px;
+    }
+
  }
 
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
     section h1 {
-        margin: calc(var(--size) * 1.6) 0 calc(var(--size) * 0.2);
+        margin: calc(var(--size) * 1.6) 0 calc(var(--size) * 0.4);
     }
  }
 
