@@ -38,6 +38,7 @@
 
 
 </div>  <!-- .background -->
+</div>  <!-- #page -->
 
 <!--    BOOTSTRAP CORE JAVASCRIPT  
         Placed at the end of the document so the pages load faster! 

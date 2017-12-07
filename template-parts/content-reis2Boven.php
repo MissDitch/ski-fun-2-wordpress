@@ -27,13 +27,13 @@ $boekingEind = strtotime('2017-12-15 00:00:00');
                 <?php  if($date < $boekingEind) :  ?>
 
                 <p><span class="alert"><?php echo $reis_boeken_alert; ?></span></p>
-                <p><?php echo $reis_boeken_tekst; ?></p>
+                <?php echo $reis_boeken_tekst; ?>
                                 
                 <?php endif; ?>
 
                 <?php if($date > $boekingEind) : ?>
 
-                <p><?php echo $reis_boeken_na_sluiting; ?></p>
+                <?php echo $reis_boeken_na_sluiting; ?>
 
                 <?php endif; ?>       
                 
@@ -92,7 +92,7 @@ if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') {
 
                     <?php if ( get_field('aantal_onder') && get_field('tekst_onder') ) :  ?>        
                         <span> <?php the_field('aantal_onder'); ?></span>
-                        <p><?php the_field('tekst_onder'); ?></p> 
+                        <?php the_field('tekst_onder'); ?>
 
                     <?php endif; ?>                
 

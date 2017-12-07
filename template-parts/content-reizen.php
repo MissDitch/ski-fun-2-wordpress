@@ -28,7 +28,7 @@ $reis_2_beschrijving = get_field('reis_2_beschrijving');
 
                 <?php endif; ?>
 
-                <p><?php echo $reis_1_beschrijving; ?> </p>
+                <?php echo $reis_1_beschrijving; ?>
 
                 <div class="row">
                     <div class="col-sm-4"><a href="<?php echo get_permalink(21); ?>"><p>Lees meer</p></a></div>
@@ -52,7 +52,7 @@ $reis_2_beschrijving = get_field('reis_2_beschrijving');
 
                 <?php endif; ?>
 
-                <p><?php echo $reis_2_beschrijving; ?> </p>
+                <?php echo $reis_2_beschrijving; ?> 
 
                 <div class="row">
                     <div class="col-sm-4"><a href="<?php echo get_permalink(24); ?>"><p>Lees meer</p></a></div>

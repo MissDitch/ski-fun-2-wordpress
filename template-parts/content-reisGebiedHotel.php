@@ -47,7 +47,7 @@ $kamerindeling_tekst = get_field('kamerindeling_tekst');
                     <!--  2E KOLOM: ACCOMODATIE -->                               
                     <div class="col-sm-12 pb-5 ml-3 mt-5 mb-5 tintvlakLB">   <!--  2E KOLOM: ACCOMODATIE -->
                         <h2><?php echo $accomodatie_kop; ?></h2>
-                        <p><?php echo $accomodatie_tekst; ?> </p>
+                        <?php echo $accomodatie_tekst; ?> 
                     </div>   
 
                     <!--  2E KOLOM: ligging-->

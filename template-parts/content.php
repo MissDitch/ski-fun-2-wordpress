@@ -22,7 +22,7 @@
         <div class="post-details">
             <span class="entypo-user LB"></span> <?php the_author() ?>
             <span class="entypo-clock LB"></span><time><?php the_date() ?></time> 
-            <span class="entypo-folder LB"></span><time><?php the_category(', ') ?></time>
+            <span class="entypo-folder LB"></span><?php the_category(', ') ?>
             <span class="entypo-tag LB"></span><?php the_tags('', ', ', '') ?>
         
             <div class="post-comments-badge">

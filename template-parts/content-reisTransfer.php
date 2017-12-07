@@ -20,7 +20,7 @@ $let_op_lijst = get_field('let_op_lijst');
                 <!-- TRANSFER --> 
             <div class="col-sm-auto pb-3 ml-3 tintvlakLB">
                 <h2 ><?php echo $transfer_kop; ?> <span class="maki-bus LB"> </span></h2>
-                <p><?php echo $transfer_vervoer; ?></p>
+                <?php echo $transfer_vervoer; ?>
                 <h3><?php echo $opstapplaatsen_kop; ?></h3>
                 <?php echo $opstapplaatsen_tekst; ?>
                 
@@ -47,13 +47,13 @@ $let_op_lijst = get_field('let_op_lijst');
 
 <?php while ($loop->have_posts() ) : $loop->the_post(); ?>
 
-    <div id="<?php the_title(); ?>" class="modal fade">
+    <div id="<?php the_title(); ?>" class="modal fade" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
 
             <div class="modal-header">
                 <h3><?php the_field('modal_kop'); ?></h3>
-                <a type="button" class="closeButton" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
+                <a class="closeButton" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span>
                 </a>
             </div> <!-- .modal-header -->
 

@@ -23,7 +23,7 @@ get_header(); ?>
 
             <div class="col-sm-12 col-md-8">
                 <h1><?php  echo $boven_kop; ?></h1>
-                <p><?php echo $boven_tekst; ?></p>               
+                <?php echo $boven_tekst; ?>             
             </div>
 
         </div>

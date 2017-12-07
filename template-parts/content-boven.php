@@ -13,7 +13,7 @@ $boven_tekst_alert  = get_field('boven_tekst_alert');
 
             <div class="col-sm-12 col-md-8">
                 <h1><?php  echo $boven_kop; ?></h1>
-                <p><?php echo $boven_tekst; ?></p>
+                <?php echo $boven_tekst; ?>
 
                 <!-- if user put in an alert text -->            
                 <?php if(  !empty($boven_tekst_alert) ) : ?>

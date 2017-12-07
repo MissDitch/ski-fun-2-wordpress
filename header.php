@@ -25,7 +25,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
     
     <!-- icons -->
-    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=iconicfill|maki|typicons|entypo">
+    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=iconicfill%7Cmaki%7Ctypicons%7Centypo">
 
     <?php wp_head(); ?>
     
